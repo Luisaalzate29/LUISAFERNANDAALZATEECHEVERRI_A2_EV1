@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modulo Facturación</title>
+  <style>
+
+        body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #005fa3;
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px 20px;
+    }
+
+    nav label {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #005fa3;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      
+    }
+
+    nav label {
+      background-color: #fcfbfb;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+    }
+
+
+
+
+    .actions button{
+      padding: 10px 20px;
+      background-color:white;
+      color:  #005fa3;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+   .actions {
+      background-color:#005fa3;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
+    }
+.info-container button{
+          padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+}
+
+
+
+
+  </style>
+  <header>
+    Empresa de Servicios Públicos Agua y Luz
+  </header>
+ 
+    
+    <nav><label >BUSQUEDA FILTRAR</label></nav>
+    <br>
+    <label for="consulta">Identificación:</label>
+    <input type="text" id="Identificación" placeholder="Escribe aquí...">
+    <label for="consulta">Fecha Inicio:</label>
+    <input type="date" id="FechaInicial" placeholder="date">
+    <label for="consulta">Fecha Final</label>
+    <input type="date" id="Fechafinal" placeholder="date">
+    <br>
+    <br>
+   
+    
+    <table >
+        <thead>
+            <tr>
+                <th>Id_Cliente</th>
+                <th>Nombre del Cliente</th>
+                <th>Identificación</th>
+                <th>Cantidad de Luz</th>
+                <th>Cantidad de Agua</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha Final</th>
+                <th>Valor de Luz</th>
+                <th>Valor de Agua</th>
+                <th>Valor Total a Pagar</th>
+                <th>CxC</th>
+                <th>Valor Acumulado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1312321321</td>
+                <td>Fernando Echeverri</td>
+                <td>12345678</td>
+                <td>100 kWh</td>
+                <td>50 m³</td>
+                <td>01/06/2025</td>
+                <td>30/06/2025</td>
+                <td>$200.000</td>
+                <td>$150.000</td>
+                <td>$350.000</td>
+                <td>$50.000</td>
+                <td>$400.000</td>
+            </tr>
+        </tbody>
+    </table>
+ <br>
+
+
+
+
+
+ <br>
+    <div class="actions">
+        <button>Borrar Consulta</button>
+        <button>Regresar</button>
+        <button>Consultar</button>
+        <button>⬅️</button>
+        <button>➡️</button>
+    </div>
+
+</body>
+</html>

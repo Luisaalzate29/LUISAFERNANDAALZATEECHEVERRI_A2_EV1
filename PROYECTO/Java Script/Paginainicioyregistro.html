@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Principal</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      background-color: #005fa3;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+    }
+
+    nav button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #005fa3;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+      background-color: #e0e0e0;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .info-container, .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .form-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #005fa3;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
+    }
+.info-container button{
+          padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    Empresa de Servicios Públicos Agua y Luz
+  </header>
+
+  <nav>
+    <button onclick="showForm('inicio')">INICIO</button>
+    <button onclick="showForm('registro')">REGISTRO</button>
+  </nav>
+
+  <main>
+    <div class="info-container" id="reginstalac">
+             <h2>Solicitar Instalación</h2>
+      <p>Ingresa tus datos y te contactaremos para realizar el proceso de intalación de Agua y Luz</p>
+      <img src= "imagen/LogoEmpresaServicios.jpg" alt="Instalaciones">
+      <br>
+      <br>
+       <form id="solicitarserv"></form>
+      <button type="submit">Solicitar</button>
+
+       </form>
+    </div>
+    <div class="form-container hidden" id="inicioForm">
+      <h2>Inicio de Sesión</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsuario" placeholder="Usuario/email" />
+        <input type="password" id="loginPassword" placeholder="Contraseña" />
+        <div class="error" id="loginErrorMsg"></div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <a href="#" onclick="showForm('recuperar')">¿Olvidaste tu contraseña?</a>
+      <br>
+      <a href="#" onclick="showForm('Registrarse')">Registrarse</a>
+    </div>
+    <div class="form-container hidden" id="registroForm">
+      <h2>Registro de Usuario</h2>
+      <form id="registerForm">
+        <input type="number" id="Identificación" placeholder="Identificación" />
+        <input type="text" id="NombreCompleto" placeholder="Nombres" />
+        <input type="text" id="Apellido1" placeholder="Apellido1" />
+        <input type="text" id="Apellido2" placeholder="Apellido2" />
+        <input type="text" id="Telefono" placeholder="Telefono" />
+        <input type="email" id="email" placeholder="email" />
+        <input type="text" id="dirección" placeholder="dirección" />
+        <input type="text" id="ServiciosInstalados" placeholder="Servicios Instalados SI/NO" />
+        <div class="error" id="registerErrorMsg"></div>
+        <button type="submit">Registrarse</button>
+        <button type="submit">Volver Inicio</button>
+      </form>
+    </div>
+    <div class="form-container hidden" id="recuperarForm">
+      <h2>Recuperar Contraseña</h2>
+      <form id="recoverForm">
+        <input type="text" id="recoverUsuario" placeholder="Usuario" />
+        <input type="password" id="newPassword" placeholder="Nueva Contraseña" />
+        <div class="error" id="recoverErrorMsg"></div>
+        <button type="submit">Recuperar</button>
+        <button type="submit">Volver Inicio</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    Empresa de Servicios Públicos<br>
+    Gracias por visitarnos.<br>
+    Sedes: Cali, Bogotá, Medellín, Cartagena, Santa Marta.
+  </footer>
+
+  <script>
+    function showForm(formId) {
+      document.getElementById('inicioForm').classList.add('hidden');
+      document.getElementById('registroForm').classList.add('hidden');
+      document.getElementById('recuperarForm').classList.add('hidden');
+      document.getElementById(formId + 'Form').classList.remove('hidden');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const usuario = document.getElementById('loginUsuario').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+      const errorMsg = document.getElementById('loginErrorMsg');
+
+      if (usuario === '' || password === '') {
+        errorMsg.textContent = 'Por favor ingrese usuario y contraseña.';
+      } else {
+        errorMsg.textContent = '';
+        alert('Inicio de sesión exitoso.');
+      }
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const usuario = document.getElementById('Identificación').value.trim();
+      const password = document.getElementById('registerPassword').value.trim();
+      const errorMsg = document.getElementById('registerErrorMsg');
+
+      if (usuario === '' || password === '') {
+        errorMsg.textContent = 'Por favor ingrese usuario y contraseña.';
+      } else {
+        errorMsg.textContent = '';
+        alert('Registro exitoso.');
+      }
+    });
+
+    document.getElementById('recoverForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const usuario = document.getElementById('recoverUsuario').value.trim();
+      const newPassword = document.getElementById('newPassword').value.trim();
+      const errorMsg = document.getElementById('recoverErrorMsg');
+
+      if (usuario === '' || newPassword === '') {
+        errorMsg.textContent = 'Por favor ingrese usuario y nueva contraseña.';
+      } else {
+        errorMsg.textContent = '';
+        alert('Contraseña recuperada exitosamente.');
+      }
+    });
+  </script>
+
+</body>
+</html>

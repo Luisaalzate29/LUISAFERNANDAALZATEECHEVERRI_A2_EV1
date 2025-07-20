@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Empresa de Servicios Públicos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      animation: fadeIn 2s;
+    }
+
+    nav {
+      background-color: #005fa3;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 20px;
+      animation: slideIn 1s;
+    }
+
+    nav button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #005fa3;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #e0e0e0;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+      animation: fadeIn 2s;
+    }
+
+    .info-container, .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 40%;
+      text-align: center;
+    }
+
+    .info-container img, .form-container img {
+      width: 100%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Empresa de Servicios Públicos
+  </header>
+
+  <nav>
+    <button>INICIO</button>
+    <button>REGISTRO</button>
+  </nav>
+
+  <main>
+    <div class="info-container">
+      <h2>Nuevas Instalaciones</h2>
+      <img src="https://via.placeholder.com/400x200" alt="Nuevas Instalaciones">
+      <p>Información sobre nuevas instalaciones de servicios.</p>
+    </div>
+    <div class="form-container">
+      <h2>Pago de Servicios</h2>
+      <img src="https://via.placeholder.com/400x200" alt="Pago de Servicios">
+      <form id="pagoForm">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contraseña" placeholder="Contraseña">
+        <button type="submit">Pagar</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>Gracias por visitarnos. Estamos con ustedes prestando servicios de luz y agua de la mejor calidad.</p>
+    <p>Sedes: Cali, Bogotá, Medellín, Cartagena, Santa Marta.</p>
+    <div>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </footer>
+
+</body>
+</html>
