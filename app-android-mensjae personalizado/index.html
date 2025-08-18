@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Presupuesto Familiar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+    #mensaje {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Organiza tu presupuesto familiar</h2>
+  <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+  <button onclick="mostrarMensaje()">Aceptar</button>
+  <div id="mensaje"></div>
+
+  <script>
+    function mostrarMensaje() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const mensajeDiv = document.getElementById("mensaje");
+
+      if (nombre) {
+        mensajeDiv.innerText = `Hola ${nombre}, con esta aplicación vas a organizar tu presupuesto familiar mes a mes, con el que podrás pagar tus necesidades, entretenimiento y ahorrar.`;
+      } else {
+        mensajeDiv.innerText = "Por favor, ingresa tu nombre.";
+      }
+    }
+  </script>
+</body>
+</html>
